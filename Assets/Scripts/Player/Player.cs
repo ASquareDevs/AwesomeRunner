@@ -109,6 +109,7 @@ public class Player : MonoBehaviour,IResettable, ICommandTranslator
     {
         PlayerStateMachine.SetState(PlayerStateMachine.PlayerDeadState);
         GameSession.Instance.UpdateScoreboard(new ScoreboardEntry(name,PlayerStatictics.Score));
+        StartCoroutine(IRestartGame());
     }
 
     public IEnumerator GrantInvincibility()
@@ -176,4 +177,10 @@ public class Player : MonoBehaviour,IResettable, ICommandTranslator
         }
 
     }//END VuplexInputs
+
+    IEnumerator IRestartGame()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
