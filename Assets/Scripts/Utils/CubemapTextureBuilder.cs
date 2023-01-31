@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 using System.IO;
+#if UNITY_EDITOR
 
 public class CubemapTextureBuilder : EditorWindow
 {
@@ -138,3 +139,4 @@ public class CubemapTextureBuilder : EditorWindow
         }
     }
 }
+#endif
