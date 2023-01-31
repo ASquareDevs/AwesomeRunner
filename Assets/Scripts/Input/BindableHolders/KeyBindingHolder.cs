@@ -13,9 +13,7 @@ public class KeyBindingHolder : IBindingHolder<KeyBinding>
         {ECommand.DOWN, new KeyBinding(KeyCode.DownArrow,KeyCode.S)},
         {ECommand.UP, new KeyBinding(KeyCode.UpArrow,KeyCode.W)},
         {ECommand.LEFT, new KeyBinding(KeyCode.LeftArrow,KeyCode.A)},
-        {ECommand.RIGHT, new KeyBinding(KeyCode.RightArrow,KeyCode.D)},
-        {ECommand.OPEN_SCOREBOARD, new KeyBinding(KeyCode.Tab)},
-        {ECommand.OPEN_PAUSE_MENU, new KeyBinding(KeyCode.Escape)}
+        {ECommand.RIGHT, new KeyBinding(KeyCode.RightArrow,KeyCode.D)}
     };
 
     public void Init()

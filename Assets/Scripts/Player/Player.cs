@@ -154,4 +154,26 @@ public class Player : MonoBehaviour,IResettable, ICommandTranslator
             }
         }
     }
+    //----------------------------------------//
+    public void VuplexInputs(string inputs)
+    //----------------------------------------//
+    {
+        if (inputs == "INPUT 1")
+        {
+            PlayerStateMachine.DecreaseTargetLane();
+        }
+        else if (inputs == "INPUT 2")
+        {
+            PlayerStateMachine.IncreaseTargetLane();
+        }
+        else if (inputs == "INPUT 3")
+        {
+            PlayerStateMachine.SetState(PlayerStateMachine.PlayerJumpState);
+        }
+        else if (inputs == "INPUT 4")
+        {
+            PlayerStateMachine.SetState(PlayerStateMachine.PlayerSlideState);
+        }
+
+    }//END VuplexInputs
 }
