@@ -6,6 +6,8 @@ using UnityEditor;
 using System.Linq;
 using System.IO;
 
+#if UNITY_EDITOR
+
 public class CubemapTextureBuilder : EditorWindow
 {
     [MenuItem("Tools/Cubemap Builder")]
@@ -138,3 +140,4 @@ public class CubemapTextureBuilder : EditorWindow
         }
     }
 }
+#endif
