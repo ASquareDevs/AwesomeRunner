@@ -20,6 +20,7 @@ public class GameSession : MonoBehaviour,IResettable
         Instance = this;
         Init();
         Curver = GetComponent<WorldCurver>();
+        Application.targetFrameRate = 30;
     }
 
     private void Update()

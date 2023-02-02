@@ -69,6 +69,7 @@ public class Player : MonoBehaviour,IResettable, ICommandTranslator
     private void Start()
     {
         PlayerStateMachine.SetState(PlayerStateMachine.PlayerStartingIdleState);
+        StartCoroutine(IStartRunning());
     }
 
 
@@ -183,4 +184,11 @@ public class Player : MonoBehaviour,IResettable, ICommandTranslator
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    IEnumerator IStartRunning()
+    {
+        yield return new WaitForSeconds(3);
+        PlayerStateMachine.SetState(PlayerStateMachine.PlayerGroundState);
+
+    }
+
 }
