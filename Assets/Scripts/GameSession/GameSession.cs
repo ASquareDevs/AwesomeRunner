@@ -22,13 +22,6 @@ public class GameSession : MonoBehaviour,IResettable
         Curver = GetComponent<WorldCurver>();
     }
 
-    private void Start()
-    {
-        if (ApplicationUtil.platform == RuntimePlatform.Android || ApplicationUtil.platform == RuntimePlatform.IPhonePlayer)
-        {
-            //Application.targetFrameRate = 60;
-        }
-    }
     private void Update()
     {
        inputTranslator.Tick();
@@ -40,12 +33,6 @@ public class GameSession : MonoBehaviour,IResettable
 
     private void Init()
     {
-        if (ApplicationUtil.platform == RuntimePlatform.Android || ApplicationUtil.platform == RuntimePlatform.IPhonePlayer)
-        {
-            IBindingHolder<TouchBinding> touchHolder = new TouchBindingHolder();
-            inputTranslator = new InputTranslator<TouchBinding>(touchHolder);
-        }
-        else
         {
             IBindingHolder<KeyBinding> keyHolder = new KeyBindingHolder();
             inputTranslator = new InputTranslator<KeyBinding>(keyHolder);
